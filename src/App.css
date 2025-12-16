@@ -1,0 +1,153 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li{list-style: none;}
+a{text-decoration: none; color: #333;}
+
+.app{
+  .header{
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 69px;
+    width: 100%;
+    background:  #ccc;
+    h1{
+      a{
+        font-size: 20px;
+        color: #5a514b;
+        letter-spacing: 4px;
+        font-weight: 500;
+      }
+    }
+    nav{
+      margin-top: 15px;
+      ul{
+        display: flex;
+        li{
+          a{
+            padding: 0 10px;
+            font-size: 13px;
+            color: #877b73;
+            &.g{color: #4c8a4f;};
+            &.b{font-weight: bold;};
+            &.n{
+              position: relative;
+              &:after{
+                position: absolute;
+                top: -7px; right: -3px;
+                content: "N";
+                color: red;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+    .gnb{
+      ul{
+        display: flex;
+        li{
+          a{
+            padding: 0 7px;
+            font-size: 13px;
+            color: #877b73;
+          }
+        }
+      }
+    }
+  }
+  .mainslider{
+    width: 100%;
+    height: 700px;
+    /* background: url(./assets/bg01.jpg) no-repeat; */
+    .swiper-button-prev, .swiper-button-next{
+      color: #fff;
+    }
+  }
+}
+.headerL{display: flex;}
+
+
+
+.descript{
+  padding: 130px 0;
+  h2{
+    text-align: center; 
+    color: #877b73; 
+    font-size: 18px;
+    margin-bottom: 15px;
+  } 
+  p{
+    text-align: center; 
+    color: #877b73; 
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 150%;
+    margin-bottom: 50px;
+  }
+  .bannerSlider{
+    height: 300px;
+    width: 1416px;
+    margin: 0 auto;
+    position: relative;
+
+    .swiper_btn{
+      position: relative;
+      font-size: 50px;
+      color: #ccc;
+      .swiperPrevBtn{
+        position: absolute;
+        top: -200px; left: -50px;
+      }
+      .swiperNextBtn{
+        position: absolute;
+        top: -200px; right: -50px;
+      }
+    }
+    .swiper-pagination1{
+       /*  position: absolute;
+        top: -30px; left: 1383px; */
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #ccc; 
+        text-align: right;
+      }
+    .decWrap{
+      display: flex;
+      flex-direction: column;
+      .text{
+        padding: 10px;
+        font-size: 14px;
+        color: #656565;
+      }
+      
+    }
+  }
+}
+
+.bannerslider1{
+  width: 100%;
+  margin-top: 50px;
+  h2{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .banner2{
+    width: 1416px;
+    margin: 0 auto;
+    overflow: hidden;
+    ul{
+      display: flex;
+      gap: 20px;
+      li{
+        img{}
+        p{}
+      }
+    }
+  }
+  
+}
