@@ -3,6 +3,8 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import data from '../data.js';
 import { CiHeart } from "react-icons/ci";
+import './Home.scss';
+import specialPriceData from './specialPriceData.js'
 
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,6 +20,7 @@ import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 
 const Home = () => {
     let [shoppingData] = useState(data);
+    let [sData] = useState(specialPriceData);
     console.log(shoppingData)
     const [swiperIndex, setSwiperIndex]=useState(0);
     const sliderRef=useRef(null)
@@ -97,33 +100,50 @@ const Home = () => {
                 <h2>🌈내일되면 다시 가격 올라요!</h2>
                 <div className="specialPriceWrap">
                     <ul>
-                        <li>
-                            <a href="#">
-                                <img src="/img/list1_68ffc51acebd9.gif" alt="" />
-                                <div className="special">단 하루! <span>아뜨데이 앵콜특가</span></div>
-                                <div className="discountWrap">
-                                    <span className="discount">48%</span>
-                                    <span className="prevdiscount">39,000</span>
-                                    <span className="nextdiscount">20,300</span>
-                                </div>
-                                <div className="coupon">
-                                    <img src="/img/coupon.png" alt="" />
-                                    <span>쿠폰 적용가</span>
-                                </div>
-                                <div className="specialDesc">
-                                    [울함유] (R넥&V넥/숏&롱/취향맞춤/온도까지예쁜♥) 쉐이드 2기장 라운드넥 V넥 울 니트
-                                </div>
-                                <div className="seller">
-                                    아뜨랑스
-                                </div>
-                                <div className="color">
-                                    <span></span>
-                                </div>
-                                <div className="specialBest">
-                                    <span>Best</span><span>부분 오늘 출발</span>
-                                </div>
-                            </a>
-                        </li>
+                        {
+                            sData.map((sh, i)=>{
+                                return(
+                                    <li key={sh.id}>
+                                        <a href="#">
+                                            <img src={sh.imgs} alt={sh.desc} />
+                                            
+                                            <div className="discountWrap">
+                                                <span className="discount">{sh.discount}</span>
+                                                <span className="prevdiscount">{sh.prevdiscount}</span>
+                                                <span className="nextdiscount">{sh.nextdiscount}</span>
+                                            </div>
+                                            <div className="coupon">
+                                                <img src="/img/coupon.png" alt="" />
+                                                <span>쿠폰 적용가</span>
+                                            </div>
+                                            <div className="specialDesc">
+                                                {sh.desc}
+                                            </div>
+                                            <div className="seller">
+                                                {sh.seller}
+                                            </div>
+                                            <div className="color">
+                                                <span></span>
+                                            </div>
+                                            <div className="specialBest">
+                                                <span>Best</span>
+                                                <span className='w'>{sh.specialBest}</span>
+                                            </div>
+                                            <div className="reviewWrap">
+                                                <div>
+                                                    <div className="reviewText">{sh.reviewText}</div>
+                                                    <div className="reviewNum">{sh.reviewNum}</div>
+                                                </div>
+                                                <div>
+                                                    <div className="heart"><img src="/img/like.png" alt="heartImg" /></div>
+                                                    <div className="cart"><img src="/img/cart.png" alt="cartImg" /></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                );
+                            })
+                        };
                     </ul>
                 </div>
             </div>
